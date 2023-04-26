@@ -302,19 +302,21 @@ export function Settings() {
       <div className={styles["settings"]}>
         <List>
           {enabledAccessControl ? (
-            <SettingItem
-              title={Locale.Settings.AccessCode.Title}
-              subTitle={Locale.Settings.AccessCode.SubTitle}
-            >
-              <PasswordInput
-                value={accessStore.accessCode}
-                type="text"
-                placeholder={Locale.Settings.AccessCode.Placeholder}
-                onChange={(e) => {
-                  accessStore.updateCode(e.currentTarget.value);
-                }}
-              />
-            </SettingItem>
+            <span className={styles["settings2"]}>
+              <SettingItem
+                title={Locale.Settings.AccessCode.Title}
+                subTitle={Locale.Settings.AccessCode.SubTitle}
+              >
+                <PasswordInput
+                  value={accessStore.accessCode}
+                  type="text"
+                  placeholder={Locale.Settings.AccessCode.Placeholder}
+                  onChange={(e) => {
+                    accessStore.updateCode(e.currentTarget.value);
+                  }}
+                />
+              </SettingItem>
+            </span>
           ) : (
             <></>
           )}
